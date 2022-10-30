@@ -5,7 +5,7 @@ public class Main {
         LinkedList linkedList = new LinkedList(1);
         linkedList.append(2);
 
-        System.out.println(linkedList.get(2));
+        System.out.println(linkedList.get(1));
 
         System.out.println(linkedList);
         linkedList.printList();

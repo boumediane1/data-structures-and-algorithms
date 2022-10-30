@@ -100,10 +100,9 @@ public class LinkedList {
         if (index < 0 || index >= length) return null;
 
         Node temp = this.head;
-        int count = 0;
-        while (count < index) {
+
+        for (int i = 0; i < index; i++) {
             temp = temp.next;
-            count++;
         }
 
         return temp;
