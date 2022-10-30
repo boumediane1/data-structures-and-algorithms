@@ -97,7 +97,7 @@ public class LinkedList {
     }
 
     public Node get (int index) {
-        if (index >= 0 && index + 1 < length) return null;
+        if (index < 0 || index >= length) return null;
 
         Node temp = this.head;
         int count = 0;
