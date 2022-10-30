@@ -100,12 +100,34 @@ public class LinkedList {
         if (index < 0 || index >= length) return null;
 
         Node temp = this.head;
-
         for (int i = 0; i < index; i++) {
             temp = temp.next;
         }
-
         return temp;
+    }
+
+    public void set (int index, int value) {
+
+        if (index < 0 || index >= this.length) return;
+
+        Node temp = this.head;
+        Node pre = this.head;
+
+        for (int i = 0; i < index; i++) {
+            pre = temp;
+            temp = temp.next;
+        }
+
+        Node newNode = new Node(value);
+
+        if (index == 0) {
+            newNode.next = this.head;
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            pre.next = newNode;
+            newNode.next = temp;
+        }
     }
 
     @Override
