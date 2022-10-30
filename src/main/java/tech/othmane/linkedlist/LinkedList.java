@@ -106,7 +106,7 @@ public class LinkedList {
         return temp;
     }
 
-    public boolean set (int index, int value) {
+    public boolean insert (int index, int value) {
 
         if (index < 0 || index >= this.length) return false;
 
