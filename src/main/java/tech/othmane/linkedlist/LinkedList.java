@@ -80,4 +80,24 @@ public class LinkedList {
         }
         this.length++;
     }
+
+    public void removeFirst () {
+        if (this.length == 0) return;
+        if (this.length == 1) {
+            this.head = null;
+            this.tail = null;
+            return;
+        }
+        this.head = this.head.next;
+        this.length--;
+    }
+
+    @Override
+    public String toString() {
+        return "LinkedList{\n" +
+                "\thead=" + head +
+                ",\n\ttail=" + tail +
+                ",\n\tlength=" + length +
+                "\n}";
+    }
 }
