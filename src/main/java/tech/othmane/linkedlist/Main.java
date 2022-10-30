@@ -7,8 +7,6 @@ public class Main {
         linkedList.removeLast();
 
         linkedList.prepend(1);
-        linkedList.prepend(2);
-        linkedList.prepend(3);
 
         linkedList.printList();
     }
