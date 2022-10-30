@@ -48,22 +48,24 @@ public class LinkedList {
         this.length++;
     }
 
-    public boolean removeLast () {
-        if (this.length == 0) {
-            return false;
-        } else if (this.length == 1) {
-            this.head = null;
-            this.tail = null;
-            return true;
-        }
+    public Node removeLast () {
+        if (this.length == 0) return null;
 
         Node temp = this.head;
-        while (temp.next != this.tail) {
+        Node pre = this.head;
+        while (temp.next != null) {
+            pre = temp;
             temp = temp.next;
         }
-
-        this.tail = temp;
+        this.tail = pre;
         this.tail.next = null;
-        return true;
+        length--;
+
+        if (length == 0) {
+            this.head = null;
+            this.tail = null;
+        }
+
+        return temp;
     }
 }
