@@ -81,15 +81,19 @@ public class LinkedList {
         this.length++;
     }
 
-    public void removeFirst () {
-        if (this.length == 0) return;
+    public Node removeFirst () {
+        if (this.length == 0) return null;
+
+        Node temp = this.head;
         if (this.length == 1) {
             this.head = null;
             this.tail = null;
-            return;
+            return temp;
         }
+
         this.head = this.head.next;
         this.length--;
+        return temp;
     }
 
     @Override
