@@ -114,21 +114,24 @@ public class LinkedList {
 
     public boolean insert (int index, int value) {
 
-        if (index < 0 || index >= this.length) return false;
+        if (index < 0 || index > this.length) return false;
 
         Node newNode = new Node(value);
 
         if (index == 0) {
-            newNode.next = this.head;
-            this.head = newNode;
-            this.tail = newNode;
-        } else {
-            Node pre = this.get(index - 1);
-            Node temp = pre.next;
-
-            pre.next = newNode;
-            newNode.next = temp;
+            this.prepend(value);
+            return true;
         }
+
+        if (index == this.length) {
+            this.append(value);
+            return true;
+        }
+
+        Node temp = this.get(index - 1);
+
+        newNode.next = temp.next;
+        temp.next = newNode;
 
         this.length++;
         return true;
