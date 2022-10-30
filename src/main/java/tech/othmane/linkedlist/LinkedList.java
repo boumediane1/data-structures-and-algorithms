@@ -85,14 +85,14 @@ public class LinkedList {
         if (this.length == 0) return null;
 
         Node temp = this.head;
-        if (this.length == 1) {
-            this.head = null;
+        this.head = this.head.next;
+        temp.next = null;
+        this.length--;
+
+        if (this.length == 0) {
             this.tail = null;
-            return temp;
         }
 
-        this.head = this.head.next;
-        this.length--;
         return temp;
     }
 
