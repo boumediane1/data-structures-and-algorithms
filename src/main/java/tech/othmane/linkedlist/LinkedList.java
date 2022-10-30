@@ -106,9 +106,9 @@ public class LinkedList {
         return temp;
     }
 
-    public void set (int index, int value) {
+    public boolean set (int index, int value) {
 
-        if (index < 0 || index >= this.length) return;
+        if (index < 0 || index >= this.length) return false;
 
         Node temp = this.head;
         Node pre = this.head;
@@ -128,6 +128,9 @@ public class LinkedList {
             pre.next = newNode;
             newNode.next = temp;
         }
+
+        this.length++;
+        return true;
     }
 
     @Override
