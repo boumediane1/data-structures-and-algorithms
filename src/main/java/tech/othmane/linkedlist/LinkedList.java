@@ -116,14 +116,6 @@ public class LinkedList {
 
         if (index < 0 || index >= this.length) return false;
 
-        Node temp = this.head;
-        Node pre = this.head;
-
-        for (int i = 0; i < index; i++) {
-            pre = temp;
-            temp = temp.next;
-        }
-
         Node newNode = new Node(value);
 
         if (index == 0) {
@@ -131,6 +123,9 @@ public class LinkedList {
             this.head = newNode;
             this.tail = newNode;
         } else {
+            Node pre = this.get(index - 1);
+            Node temp = pre.next;
+
             pre.next = newNode;
             newNode.next = temp;
         }
