@@ -68,4 +68,10 @@ public class LinkedList {
 
         return temp;
     }
+
+    public void prepend (int value) {
+        Node newNode = new Node(value);
+        newNode.next = this.head;
+        this.head = newNode;
+    }
 }
