@@ -96,6 +96,19 @@ public class LinkedList {
         return temp;
     }
 
+    public Node get (int index) {
+        if (this.length < index + 1) return null;
+
+        Node temp = this.head;
+        int count = 0;
+        while (count < index) {
+            temp = temp.next;
+            count++;
+        }
+
+        return temp;
+    }
+
     @Override
     public String toString() {
         return "LinkedList{\n" +
