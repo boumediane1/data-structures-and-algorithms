@@ -7,7 +7,7 @@ public class Main {
         linkedList.append(3);
         linkedList.append(4);
 
-        System.out.println(linkedList.insert(0, 9));
+        System.out.println(linkedList.remove(2));
 
         System.out.println(linkedList);
         linkedList.printList();

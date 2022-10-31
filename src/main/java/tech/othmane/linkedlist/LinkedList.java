@@ -137,6 +137,21 @@ public class LinkedList {
         return true;
     }
 
+    public Node remove (int index) {
+        if (index < 0 || index >= this.length) return null;
+        if (index == 0) return removeFirst();
+        if (index == this.length - 1) return removeLast();
+
+        Node prev = this.get(index - 1);
+        Node temp = prev.next;
+
+        prev.next = temp.next;
+        temp.next = null;
+
+        this.length--;
+        return temp;
+    }
+
     @Override
     public String toString() {
         return "LinkedList{\n" +
