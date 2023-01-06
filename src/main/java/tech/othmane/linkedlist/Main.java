@@ -7,9 +7,7 @@ public class Main {
         linkedList.append(3);
         linkedList.append(4);
 
-        System.out.println(linkedList.remove(2));
-
+        linkedList.reverse();
         System.out.println(linkedList);
-        linkedList.printList();
     }
 }

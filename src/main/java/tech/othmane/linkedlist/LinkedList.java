@@ -152,6 +152,22 @@ public class LinkedList {
         return temp;
     }
 
+    public void reverse () {
+        Node temp = this.head;
+        this.head = this.tail;
+        this.tail = temp;
+
+        Node after;
+        Node before = null;
+
+        while (temp != null) {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+        }
+    }
+
     @Override
     public String toString() {
         return "LinkedList{\n" +
