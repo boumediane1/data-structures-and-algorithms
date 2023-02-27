@@ -42,6 +42,24 @@ public class DoublyLinkedList {
         this.length++;
     }
 
+    public Node removeLast() {
+        if (this.length == 0) return null;
+
+        Node temp = this.tail;
+
+        if (this.length == 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.tail = this.tail.prev;
+            this.tail.next = null;
+            temp.prev = null;
+        }
+
+        this.length--;
+        return temp;
+    }
+
     @Override
     public String toString() {
         return "DoublyLinkedList{\n" +
