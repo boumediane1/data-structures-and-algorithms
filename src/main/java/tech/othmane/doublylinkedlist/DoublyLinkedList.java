@@ -91,6 +91,22 @@ public class DoublyLinkedList {
         return temp;
     }
 
+    public Node get(int index) {
+        if (index < 0 || index > this.length - 1) return null;
+        Node temp = this.head;
+        if (this.length / 2 > index) {
+            for (int i = 0; i < index; i++) {
+                temp = temp.next;
+            }
+        } else {
+            temp = this.tail;
+            for (int i = this.length - 1; i > index; i--) {
+                temp = temp.prev;
+            }
+        }
+        return temp;
+    }
+
     @Override
     public String toString() {
         return "DoublyLinkedList{\n" +
