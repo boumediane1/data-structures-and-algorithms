@@ -114,6 +114,31 @@ public class DoublyLinkedList {
         return true;
     }
 
+    public boolean insert(int index, int value) {
+        if (index < 0 || index > this.length) return false;
+
+        if (index == 0) {
+            prepend(value);
+            return true;
+        }
+
+        if (index == this.length) {
+            append(value);
+            return true;
+        }
+
+        Node temp = get(index);
+        Node newNode = new Node(value);
+
+        temp.prev.next = newNode;
+        newNode.prev = temp.prev;
+        newNode.next = temp;
+        temp.prev = newNode;
+
+        this.length++;
+        return true;
+    }
+
     @Override
     public String toString() {
         return "DoublyLinkedList{\n" +
