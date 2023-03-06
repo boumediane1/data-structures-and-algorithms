@@ -139,6 +139,22 @@ public class DoublyLinkedList {
         return true;
     }
 
+    public Node remove(int index) {
+        Node temp = get(index);
+
+        if (temp == null) return null;
+        if (index == 0) return removeFirst();
+        if (index == this.length - 1) return removeLast();
+
+        temp.prev.next = temp.next;
+        temp.next.prev = temp.prev;
+        temp.next = null;
+        temp.prev = null;
+
+        this.length--;
+        return temp;
+    }
+
     @Override
     public String toString() {
         return "DoublyLinkedList{\n" +
