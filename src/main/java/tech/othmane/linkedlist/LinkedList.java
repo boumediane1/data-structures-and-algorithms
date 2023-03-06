@@ -9,7 +9,7 @@ public class LinkedList {
         int value;
         Node next;
 
-        public Node (int value) {
+        public Node(int value) {
             this.value = value;
         }
 
@@ -22,13 +22,13 @@ public class LinkedList {
         }
     }
 
-    public LinkedList (int value) {
+    public LinkedList(int value) {
         this.head = new Node(value);
         this.tail = this.head;
         this.length = 1;
     }
 
-    public void printList () {
+    public void printList() {
         Node temp = this.head;
 
         while (temp != null) {
@@ -37,7 +37,7 @@ public class LinkedList {
         }
     }
 
-    public void append (int value) {
+    public void append(int value) {
         Node newNode = new Node(value);
         if (this.length == 0) {
             this.head = newNode;
@@ -48,7 +48,7 @@ public class LinkedList {
         this.length++;
     }
 
-    public Node removeLast () {
+    public Node removeLast() {
         if (this.length == 0) return null;
 
         Node temp = this.head;
@@ -69,7 +69,7 @@ public class LinkedList {
         return temp;
     }
 
-    public void prepend (int value) {
+    public void prepend(int value) {
         Node newNode = new Node(value);
         if (this.length == 0) {
             this.head = newNode;
@@ -81,7 +81,7 @@ public class LinkedList {
         this.length++;
     }
 
-    public Node removeFirst () {
+    public Node removeFirst() {
         if (this.length == 0) return null;
 
         Node temp = this.head;
@@ -96,7 +96,7 @@ public class LinkedList {
         return temp;
     }
 
-    public Node get (int index) {
+    public Node get(int index) {
         if (index < 0 || index >= length) return null;
 
         Node temp = this.head;
@@ -106,13 +106,13 @@ public class LinkedList {
         return temp;
     }
 
-    public boolean set (int index, int value) {
+    public boolean set(int index, int value) {
         if (this.get(index) == null) return false;
         this.get(index).value = value;
         return true;
     }
 
-    public boolean insert (int index, int value) {
+    public boolean insert(int index, int value) {
 
         if (index < 0 || index > this.length) return false;
 
@@ -137,7 +137,7 @@ public class LinkedList {
         return true;
     }
 
-    public Node remove (int index) {
+    public Node remove(int index) {
         if (index < 0 || index >= this.length) return null;
         if (index == 0) return removeFirst();
         if (index == this.length - 1) return removeLast();
@@ -152,7 +152,7 @@ public class LinkedList {
         return temp;
     }
 
-    public void reverse () {
+    public void reverse() {
         Node temp = this.head;
         this.head = this.tail;
         this.tail = temp;
