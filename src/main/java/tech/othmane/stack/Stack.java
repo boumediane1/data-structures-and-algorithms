@@ -38,6 +38,17 @@ public class Stack {
         this.height++;
     }
 
+    public Node pop() {
+        if (this.height == 0) return null;
+
+        Node temp = this.top;
+        this.top = this.top.next;
+        temp.next = null;
+
+        this.height--;
+        return temp;
+    }
+
     @Override
     public String toString() {
         return "Stack{\n" +
