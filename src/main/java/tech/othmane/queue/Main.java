@@ -5,6 +5,7 @@ public class Main {
         Queue queue = new Queue(1);
         queue.enqueue(2);
         queue.enqueue(3);
+        queue.dequeue();
         System.out.println(queue);
     }
 }
