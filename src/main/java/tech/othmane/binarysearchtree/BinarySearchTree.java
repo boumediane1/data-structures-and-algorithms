@@ -50,6 +50,24 @@ public class BinarySearchTree {
         }
     }
 
+    public boolean contains(int value) {
+        Node temp = this.root;
+
+        while(temp != null) {
+            if(temp.value == value) {
+                return true;
+            }
+
+            if(value < temp.value) {
+                temp = temp.left;
+            } else {
+                temp = temp.right;
+            }
+        }
+
+        return false;
+    }
+
     @Override
     public String toString() {
         return "BinarySearchTree{" +
