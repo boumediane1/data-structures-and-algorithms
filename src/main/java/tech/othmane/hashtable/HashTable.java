@@ -58,6 +58,19 @@ public class HashTable {
         }
     }
 
+    public int get(String key) {
+        int index = hash(key);
+
+        Node temp = this.dataMap[index];
+
+        while(temp != null) {
+            if(temp.key == key) return temp.value;
+            temp = temp.next;
+        }
+
+        return 0;
+    }
+
     @Override
     public String toString() {
         return "HashTable{" +
