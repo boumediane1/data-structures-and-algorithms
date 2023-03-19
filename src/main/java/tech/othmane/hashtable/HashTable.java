@@ -1,6 +1,8 @@
 package tech.othmane.hashtable;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class HashTable {
     private int size = 7;
@@ -69,6 +71,18 @@ public class HashTable {
         }
 
         return 0;
+    }
+
+    public List<String> keys() {
+        List<String> keys = new ArrayList<>();
+        for(int i = 0; i < dataMap.length; i++) {
+            Node temp = this.dataMap[i];
+            while(temp != null) {
+                keys.add(temp.key);
+                temp = temp.next;
+            }
+        }
+        return keys;
     }
 
     @Override
