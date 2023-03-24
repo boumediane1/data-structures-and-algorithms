@@ -16,6 +16,15 @@ public class Graph {
         return false;
     }
 
+    public boolean addEdge(String vertex1, String vertex2) {
+        if(this.adjacencyList.get(vertex1) != null && this.adjacencyList.get(vertex2) != null) {
+            this.adjacencyList.get(vertex1).add(vertex2);
+            this.adjacencyList.get(vertex2).add(vertex1);
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return "Graph{" +
