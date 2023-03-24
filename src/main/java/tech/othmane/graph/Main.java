@@ -9,7 +9,7 @@ public class Main {
         graph.addEdge("A", "B");
         graph.addEdge("A", "C");
         graph.addEdge("B", "C");
-        graph.removeEdge("C", "B");
+        graph.removeVertex("B");
         System.out.println(graph);
     }
 }

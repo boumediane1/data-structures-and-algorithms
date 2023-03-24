@@ -34,6 +34,17 @@ public class Graph {
         return false;
     }
 
+    public boolean removeVertex(String vertex) {
+        if(this.adjacencyList.get(vertex) == null) return false;
+
+        for(String connectedVertex : this.adjacencyList.get(vertex)) {
+            this.adjacencyList.get(connectedVertex).remove(vertex);
+        }
+
+        this.adjacencyList.remove(vertex);
+        return true;
+    }
+
     @Override
     public String toString() {
         return "Graph{" +
